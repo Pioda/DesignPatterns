@@ -1,4 +1,4 @@
-= Factory Designpatterns
+= Factory Design Patterns
 Pioda
 1.0, Janury 30, 2021, AsciiDoc article template
 :toc:
