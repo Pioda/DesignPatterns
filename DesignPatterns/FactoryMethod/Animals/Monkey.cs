@@ -2,7 +2,6 @@
 using FactoryMethod.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace FactoryMethod.Animals
 {
@@ -15,6 +14,12 @@ namespace FactoryMethod.Animals
         {
             PreferedFood = new List<Food>() { Food.Vegetable };
             Name = "Monkey";
+        }
+
+        internal Monkey(string name)
+        {
+            PreferedFood = new List<Food>() { Food.Vegetable };
+            Name = name;
         }
 
         public void Feed(Food food)

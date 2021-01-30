@@ -1,13 +1,10 @@
-﻿using FactoryMethod.Enums;
-using FactoryMethod.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using FactoryMethod.Interfaces;
 
 namespace FactoryMethod.Factories
 {
     public abstract class AnimalFactory
     {
         public abstract IAnimal Create();
+        public abstract IAnimal CreateWithName(string name);
     }
 }

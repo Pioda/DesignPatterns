@@ -1,5 +1,4 @@
 ﻿using FactoryMethod.Enums;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace FactoryMethod.Interfaces

@@ -1,8 +1,5 @@
 ﻿using FactoryMethod.Animals;
 using FactoryMethod.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace FactoryMethod.Factories
 {
@@ -11,6 +8,11 @@ namespace FactoryMethod.Factories
         public override IAnimal Create()
         {
             return new Lion();
+        }
+
+        public override IAnimal CreateWithName(string name)
+        {
+            return new Lion(name);
         }
     }
 }

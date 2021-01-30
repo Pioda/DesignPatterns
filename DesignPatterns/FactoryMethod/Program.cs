@@ -64,7 +64,7 @@ namespace FactoryMethod
         private static void DisplayAnimals()
         {
             foreach (var animal in Animals)
-                Console.WriteLine($"{animal.GetName()}");
+                Console.WriteLine($"Animal {animal.GetType()} Name {animal.GetName()}");
         }
 
         private static void ShowPreferences()
