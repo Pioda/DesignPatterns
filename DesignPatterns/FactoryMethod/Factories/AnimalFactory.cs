@@ -6,8 +6,8 @@ using System.Text;
 
 namespace FactoryMethod.Factories
 {
-    internal abstract class AnimalFactory
+    public abstract class AnimalFactory
     {
-        internal abstract IAnimal Create();
+        public abstract IAnimal Create();
     }
 }

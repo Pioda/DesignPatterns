@@ -1,0 +1,123 @@
+= Factory Designpatterns
+Pioda
+1.0, Janury 30, 2021, AsciiDoc article template
+:toc:
+:icons: font
+:url-quickref: https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/
+
+== Factory Method pattern
+
+[quote, Refactoring Guru, https://refactoring.guru/design-patterns/factory-method]
+____
+Factory Method is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
+____
+
+=== Idea
+Factory Method outsources the creation of an Object from the Constructor into a method. This way the instantiation of an Object can be delegated into specific functions that can reflect the intendet use of the instantiated object via the functionname and its parameters. This way, behaviour of the factory method can also be changed at runtime to return a Singleton or a `null`.
+
+=== Example
+In the example code all the animals are internal classes with internal constructors (i.e see `Bear.cs`). This prohibits the instantiation of Objects outside the assemblies scope. From the outside, they can only be instantiated via a `Factory` (i.e. see `BearFactory.cs`) as it offers a `public` create method to get an object implementing the `IAnimal` interface. 
+
+
+
+== Abstract Factory pattern
+[quote, Refactoring Guru, https://refactoring.guru/design-patterns/factory-method]
+____
+Abstract Factory is a creational design pattern that lets you produce families of related objects without specifying their concrete classes.
+____
+=== Idea
+An abstract factory takes the concept of factory method up a notch by supplying an _abstract base class_ for the implementation of factories of familiar objects. A multitude of _classes_ inheriting from the same base or implementing a comming interface can each have their _concrete_ implementation of the abstract factory returning specific instances of the base class.
+
+=== Example
+In the example code, the `AnimalFactory` qualifies for the abstract base class. It offers an abstract/overridable method `public IAnimal Create()` to return instances of `IAnimal` interface. Each of the `Bear`, `Lion` and `Monkey` classes implement the `IAnimal` interface. In addition, each one has its own implementation of the AnimalFactory, `BearFactory`, `LionFactory`, `MonkeyFactory` to create instances of objects.
+
+== Pro's & Con's
+
+.Pro & Contra Table
+[cols="^,^"]
+|===
+|Pro | Con
+|Avoid tight coupling | complication through subclassing
+|SRP: Object creation in dedicated factory | When done improperly, tighter coupling and ISP violations
+|OCD, easy subtyping |
+|===
+
+(SRP => Single Respoonsipility Principle; OCD => Open Close Principle; ISP => Interface Segragation Principle; OCD => Open/Closed Principle)
+
+
+
+//This is a paragraph with a *bold* word and an _italicized_ word.
+
+//.Image caption
+//image::image-file-name.png[I am the image alt text.]
+
+//This is another paragraph.footnote:[I am footnote text and will be displayed at the bottom of the article.]
+//.Unordered list title
+//* list item 1
+//** nested list item
+//*** nested nested list item 1
+//*** nested nested list item 2
+//* list item 2
+
+//This is a paragraph.
+
+//.Example block title
+//====
+//Content in an example block is subject to normal substitutions.
+//====
+
+//.Sidebar title
+//****
+//Sidebars contain aside text and are subject to normal substitutions.
+//****
+
+//==== Third level heading
+
+//[#id-for-listing-block]
+//.Listing block title
+//----
+//Content in a listing block is subject to verbatim substitutions.
+//Listing block content is commonly used to preserve code input.
+//----
+
+//===== Fourth level heading
+
+//.Table title
+//|===
+//|Column heading 1 |Column heading 2
+
+//|Column 1, row 1
+//|Column 2, row 1
+
+//|Column 1, row 2
+//|Column 2, row 2
+//|===
+
+//====== Fifth level heading
+
+//[quote, firstname lastname, movie title]
+//____
+//I am a block quote or a prose excerpt.
+//I am subject to normal substitutions.
+//____
+
+//[verse, firstname lastname, poem title and more]
+//____
+//I am a verse block.
+//  Indents and endlines are preserved in verse blocks.
+//____
+
+//TIP: There are five admonition labels: Tip, Note, Important, Caution and Warning.
+
+// I am a comment and won't be rendered.
+
+//. ordered list item
+//.. nested ordered list item
+//. ordered list item
+
+//The text at the end of this sentence is cross referenced to <<_third_level_heading,the third level heading>>
+
+//== First level heading
+
+//This is a link to the https://docs.asciidoctor.org/home/[Asciidoctor documentation].
+//This is an attribute reference {url-quickref}[that links this text to the AsciiDoc Syntax Quick Reference].

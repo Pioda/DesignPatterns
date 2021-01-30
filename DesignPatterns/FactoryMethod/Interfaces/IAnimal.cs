@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace FactoryMethod.Interfaces
 {
-    internal interface IAnimal
+    public interface IAnimal
     {
         IEnumerable<Food> GetFoodPreferences();
         void Feed(Food food);

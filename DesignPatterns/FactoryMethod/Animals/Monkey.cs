@@ -10,7 +10,8 @@ namespace FactoryMethod.Animals
     {
         private List<Food> PreferedFood;
         private readonly string Name;
-        public Monkey()
+        
+        internal Monkey()
         {
             PreferedFood = new List<Food>() { Food.Vegetable };
             Name = "Monkey";

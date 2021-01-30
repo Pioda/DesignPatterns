@@ -1,6 +1,6 @@
 ﻿namespace FactoryMethod.Enums
 {
-    internal enum Food
+    public enum Food
     {
         Vegetable,
         Meat

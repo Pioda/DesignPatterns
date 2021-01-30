@@ -6,9 +6,9 @@ using System.Text;
 
 namespace FactoryMethod.Factories
 {
-    internal class LionFactory : AnimalFactory
+    public class LionFactory : AnimalFactory
     {
-        internal override IAnimal Create()
+        public override IAnimal Create()
         {
             return new Lion();
         }
