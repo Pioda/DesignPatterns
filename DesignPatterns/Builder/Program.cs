@@ -6,7 +6,10 @@ namespace Builder
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+            Coffee coffee = Coffee.Create().BlackCoffee().WithMilk().WithRum();
+            Console.WriteLine(coffee.ToString());
+            Console.ReadLine();
         }
     }
 }
