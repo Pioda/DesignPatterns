@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Builder
+namespace Builder.FluentBuilder
 {
     public class CoffeeBuilder
     {
