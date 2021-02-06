@@ -1,0 +1,30 @@
+= Builder Design Patterns
+Pioda
+1.0, Februrary 06, 2021, AsciiDoc article template
+:toc:
+:icons: font
+:url-quickref: https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/
+
+== Builder Pattern
+The Builder designpattern is next to Factory Method and Abstract Factory the next "Group of 4" creational design patterns.
+
+== Idea
+Similiar to the Factory Method pattern, creation of a complicated object gets outsourced into a method. The key difference is that creation takes place over multiple method call, often named in a "WithXXX" convention. Builders often get used when creation of an object instance is not intuitive or if the object instance can be used multiple ways (i.e. building classes for unit tests).
+
+Creation of objects usually get outsourced into specific "BuilderClasses" that contain all the logic (offering the "With..." methods) to create instances of an object.
+Additionally "Directors" can be created to abstract multiple builder steps together for certain predefined scenarios by using a given a specific builder.
+
+== Example
+The example code contains to scenarios: a "FluentBuilder" and a "CompositeBuilder". The key point for a FluentBuilder is, that every step of the creation returns an instance of the Builder instance to chain multiple steps one after the other. The CompositeBuilder enhances on this feature by creating inheriting Builders that handle creation of objects attached to the root.
+
+== Pro's & Con's
+
+.Pro & Contra Table
+[cols="^,^"]
+|===
+|Pro | Con
+|Avoid an abstruse amount of CTORs | complication through subclassing
+|Create different repres. of the same object | more complex than Factories
+|SRP => Creation of complex objects takes place in dedicated Builder/Directors | "Valid" object states might be hard to see/achieve
+|===
+(SRP => Single Respoonsipility Principle)

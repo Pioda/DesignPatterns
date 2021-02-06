@@ -27,6 +27,7 @@ namespace Builder
                     .WithGarageCarSpace(3)
                     .WithGarageArea(30);
 
+            var houseDirector = new HouseDirector(House.Create());
 
             Console.WriteLine(coffee.ToString());
             Console.ReadLine();
