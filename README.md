@@ -8,3 +8,4 @@ Each project holds an implementation and a description with pro's, con's and int
 ## Content
 - Creational Patterns (Group of 4)
   - [Factory Method & Abstract Factory](https://github.com/Pioda/DesignPatterns/tree/main/DesignPatterns/FactoryMethod)
+  - [Builder](https://github.com/Pioda/DesignPatterns/tree/main/DesignPatterns/Builder)
