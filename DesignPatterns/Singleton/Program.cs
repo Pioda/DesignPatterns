@@ -6,7 +6,19 @@ namespace Singleton
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var evenRepo = new EvenIndiceRepo();
+            var oddRepo = new OddIndiceRepo();
+            
+            foreach(var entry in evenRepo.Get())
+            {
+                Console.WriteLine(entry);
+            }
+            foreach (var entry in oddRepo.Get())
+            {
+                Console.WriteLine(entry);
+            }
+
+            Console.ReadKey();
         }
     }
 }
