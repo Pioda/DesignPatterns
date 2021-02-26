@@ -1,0 +1,27 @@
+= Singleton Design Patterns
+Pioda
+1.0, February 26, 2021, AsciiDoc article template
+:toc:
+:icons: font
+:url-quickref: https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/
+
+== Singleton Pattern
+Another of the "Group of 4" creational design patterns, the singleton ensures that only one instance of a class is used, providing a single global access points to the singleton instance.
+
+== Idea
+The idea of the singleton design pattern arose from the idea of having only one instance of component that should be used by the whole system. Most common use cases think of loading a database into memory where it is neither suitable nor memory storage wise adequate to allocate more than one instances. 
+
+== Example
+In the example code, I am making use of a in-memory like database where I store indices and strings into a dictonary. The constructor of said `SingletonDb` class is marked as private to prohibit the instantiation of new instances. An instance of the `SingletonDb` can be accessed by calling the `public static SingletonDb Instance`, making sure that this instance is the same throughout the runtime of the program. Further the class makes use of `Lazy Loading`. So that an instances of `SingletonDb` is first created when the static instance field is accessed.
+
+== Pro's & Con's
+
+.Pro & Contra Table
+[cols="^,^"]
+|===
+|Pro | Con
+|Singleton works great with IOC & DI | customizing the creation of objects of a singleton class is not possible
+|Object is only initialized when first called | Singletons are often considered design smells
+|Global access point to class functions | Violoates SRP
+| | Special treatment needed while mutlithreading
+|===
